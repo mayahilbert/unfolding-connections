@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1VQ2XMJVJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P1VQ2XMJVJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce Yu-Jean Lee: Unfolding Connections</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preload" href="fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Satoshi-VariableItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript>
+        <style type="text/css">
+            #myVideo,
+            #myVideo2 {
+                display: none;
+            }
+
+            #works {
+                display: flex;
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body onload="setupVideo()" class="homepage">
+    <video autoplay muted playsinline src="images/Delappe-Launch-Page-BEFORE-SHATTER.mp4" id="myVideo">
+        Video not supported
+    </video>
+    <video muted playsinline src="images/Delappe-Launch-Page-SHATTER.mp4" id="myVideo2">
+        Video not supported
+    </video>
+    <div id="main-wrapper">
+        <div class="scroll-snap-container">
+            <section class="landing-container" id="landing-content">
+                <nav><a class="link-nma" href="https://newmediartspace.info">New Media
+                        Artspace</a>
+                    <a class="link-curatorial" href="curatorial-statement.html">About
+                        the
+                        Exhibition</a>
+                    <a class="link-view" href="#works">Scroll to view
+                        the
+                        works</a>
+                </nav>
+                <div class="exhibition-title-container">
+                    <h1 class="exhibition-title"><span class="exhibition-title-1">Joyce Yu-</span><span
+                            class="exhibition-title-2">Jean Lee:</span> <span
+                            class="exhibition-title-3">Unfold</span><span class="exhibition-title-4">ing
+                            Conn</span><span class="exhibition-title-5">ections</span></h1>
+                </div>
+            </section>
+            <!--<section class="works-container" id="works">
+
+            <div class="works-wrapper">
+                <a href="firewall.html">
+                    <div class="work">
+                        <div class="folded " style="--bg: url('images/FIREWALL_NYC-06.jpg');">
+                            <div class="a"></div>
+                            <div class="bc">
+
+                                <div class="b"></div>
+                            </div>
+                            <img src="images/FIREWALL_NYC-06.jpg">
+
+                        </div>
+                    </div>
+                
+                    <div class="work work-1-thumb">
+                        <h2>FIREWALL</h2>
+                    </div>
+                </a>
+                <a href="unfolding-nai-nai.html">
+                    <div class="work work-2-thumb">
+                        <h2>Unfolding Nai Nai</h2>
+                    </div>
+                </a>
+                <a href="what-its-like-what-it-is.html">
+                    <div class="work work-3-thumb">
+                        <h2>What It's Like, What It Is</h2>
+                    </div>
+                </a>
+                <a href="passages-iii.html">
+                    <div class="work work-4-thumb">
+                        <h2>Passages III</h2>
+                    </div>
+                </a>
+            </div>
+
+        </section>-->
+            <section class="work-grid" id="works">
+                <div class="grid-item firewall-grid-item">
+                    <div class="image-wrapper fold-left">
+                        <div class="image-half image-left">
+                            <img src="images/FIREWALL_NYC-06.jpg" class="image">
+                        </div>
+                        <div class="image-half image-right">
+                            <img src="images/FIREWALL_NYC-06.jpg" class="image">
+                        </div>
+                    </div>
+                    <h2 class="work-hidden">FIREWALL</h2>
+                </div>
+                <div class="grid-item unfolding-grid-item">
+                    <div class="image-wrapper fold-right">
+                        <div class="image-half image-left">
+                            <img src="images/PageImage-504267-2988615-c58ec261be.jpg" class="image">
+                        </div>
+                        <div class="image-half image-right">
+                            <img src="images/PageImage-504267-2988615-c58ec261be.jpg" class="image">
+                        </div>
+                    </div>
+                    <h2 class="work-hidden">Unfolding Nai Nai</h2>
+                </div>
+                <div class="grid-item whatitslike-grid-item">
+                    <div class="image-wrapper fold-left">
+                        <div class="image-half image-left">
+                            <img src="images/whatitslike-whatitis-keyimage3.png" class="image">
+                        </div>
+                        <div class="image-half image-right">
+                            <img src="images/whatitslike-whatitis-keyimage3.png" class="image">
+                        </div>
+                    </div>
+                    <h2 class="work-hidden">What It's Like, What It Is</h2>
+                </div>
+                <div class="grid-item passages-grid-item">
+                    <div class="image-wrapper fold-right">
+                        <div class="image-half image-left">
+                            <img src="images/CellMan.jpg" class="image">
+                        </div>
+                        <div class="image-half image-right">
+                            <img src="images/CellMan.jpg" class="image">
+                        </div>
+                    </div>
+                    <h2 class="work-hidden">Passages III</h2>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <!--<iframe class="video-16-9" src="https://player.vimeo.com/video/958505446?&amp;app_id=58479" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>-->
+
+    <script src="main.js"></script>
+</body>
+
+</html>

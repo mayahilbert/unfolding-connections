@@ -1,0 +1,783 @@
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 300.0 to 900.0
+*/
+@font-face {
+    font-family: 'Satoshi-Variable';
+    src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+        url('../fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+/**
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 900.0;
+  *
+  * available axes:
+  'wght' (range from 300.0 to 900.0
+  */
+@font-face {
+    font-family: 'Satoshi-VariableItalic';
+    src: url('../fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+        url('../fonts/Satoshi-VariableItalic.ttf') format('truetype');
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: italic;
+}
+
+* {
+    --highlight: hsl(69, 98%, 55%);
+    --highlight-light: #eeff8d;
+    --orange: hsl(17, 89%, 52%);
+    --white: #fff;
+    --black: #000;
+
+    /*--highlight: #59bf61;*/
+}
+
+html {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Satoshi-Variable', sans-serif;
+    background: black;
+    color: var(--black);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="hsl(17, 89%, 52%)" stroke="none" width="30px" height="30px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>') 16 16, auto;
+}
+
+body em {
+    font-family: 'Satoshi-VariableItalic', sans-serif;
+
+}
+
+#myVideo {
+    width: 100%;
+    height: 98vh;
+    object-fit: contain;
+    z-index: 9999;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+#myVideo2 {
+    width: 100%;
+    height: 98vh;
+    object-fit: contain;
+    z-index: 999;
+    display: none;
+    transition: 0.2s;
+    margin: 0 auto;
+}
+
+@media (min-width: 50em) {
+
+    #myVideo {
+        height: 100%;
+        max-height: 98vh;
+    }
+
+    #myVideo2 {
+        padding-top: 16vh;
+        height: 70vh;
+        max-height: 98vh;
+
+    }
+}
+
+.scroll-snap-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-snap-container>* {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+#landing-content {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url(images/CellMan-lg.jpg);
+    background-color: var(--highlight);
+    background-position: center;
+    background-size: 180%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+@media (min-width: 940px) {
+    #landing-content {
+        background-position: left;
+        background-size: 81%;
+    }
+}
+
+nav {
+    padding: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 9999;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+@media (max-width: 1280px) {
+
+    nav a:nth-child(3) {
+        position: absolute;
+        bottom: 2em;
+    }
+}
+
+@media (min-width: 1280px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 13%;
+    }
+}
+
+nav a {
+    display: block;
+    font-weight: 900;
+    color: black;
+
+}
+
+.link-nma::after {
+    content: "\2197";
+    padding: 1em;
+}
+
+.link-curatorial::after {
+    content: "\2192";
+    padding: 1em;
+}
+
+.link-view::after {
+    content: "\2198";
+    padding: 1em;
+}
+
+.exhibition-title-container {
+    right: 60%;
+    position: absolute;
+    margin-left: -66%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+@media (min-width: 940px) {
+    .exhibition-title-container {
+        margin-left: -10vw;
+    }
+}
+
+
+@media (min-width: 1060px) {
+    .exhibition-title-container {
+        margin-left: -5vw;
+    }
+}
+
+@media (min-width: 1120px) {
+    .exhibition-title-container {
+        margin-left: -3vw;
+    }
+}*/
+
+@media (min-width: 1280px) {
+    .exhibition-title-container {
+        margin-left: -35%;
+        left: -17%;
+
+    }
+}
+
+.exhibition-title {
+    font-family: 'Satoshi-Variable', sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    color: var(--highlight);
+    font-weight: 800;
+
+}
+
+.homepage .exhibition-title {
+    font-size: clamp(2.60104375rem, 1.1735rem + 5.3741vw, 11.25rem);
+    margin-top: -18%
+}
+
+@media (max-width: 450px) {
+    .homepage .exhibition-title {
+        font-size: clamp(16px, 9.5vw, 5.8rem);
+    }
+}
+
+.exhibition-title-1 {
+    rotate: 90deg;
+    position: absolute;
+}
+
+.exhibition-title-2 {
+    margin-top: 2.7em;
+    margin-left: 2.6em;
+    position: absolute;
+}
+
+.exhibition-title-3 {
+    margin-top: 3.6em;
+    margin-left: 6.67em;
+    position: absolute;
+}
+
+.exhibition-title-4 {
+    margin-top: 0.52em;
+    margin-left: 7.9em;
+    rotate: 270deg;
+    position: absolute;
+}
+
+.exhibition-title-5 {
+    margin-top: -1.63em;
+    margin-left: 5.69em;
+    rotate: 180deg;
+    position: absolute;
+}
+
+#main-wrapper {
+    z-index: -1;
+    opacity: 0;
+    display: none;
+}
+
+#main-wrapper.loaded {
+    display: block;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-weight: 300;
+    max-width: 36em;
+}
+
+/*
+body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.16) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.05));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}*/
+
+a {
+    color: var(--highlight);
+}
+
+
+.hidden-ss {
+    display: none;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.video-16-9 {
+    aspect-ratio: 16/9;
+    width: 70%;
+    position: relative;
+    z-index: 50;
+}
+
+h1 {
+    font-size: clamp(2rem, 2.4vw, 4rem);
+}
+
+.project-page .exhibition-title {
+    font-size: 1.4rem;
+}
+
+.project-page menu {
+    gap: 1em;
+}
+
+.project-page menu .button-link {
+
+    padding: 0.2em 0.7em;
+}
+
+.works-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="hsl(17, 89%, 52%)" stroke="none" width="30px" height="30px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>') 16 16, auto;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.works-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    height: 100vh;
+    width: 100%;
+}
+
+.works-wrapper>a {
+    height: 100%;
+    width: 100%;
+}
+
+.work {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.work:hover {
+    background-color: rgb(0, 0, 0, 0.6);
+
+}
+
+.work-1-thumb {
+    background-image: url('images/FIREWALL_NYC-06.jpg');
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.work-2-thumb {
+    background-image: url('images/PageImage-504267-2988615-c58ec261be.jpg');
+    grid-column: 2 / 2;
+    grid-row: 1;
+
+}
+
+.work-3-thumb {
+    background-image: url('images/whatitslike-whatitis-keyimage3.png');
+    grid-column: 1 / 2;
+    grid-row: 2;
+
+}
+
+.work-4-thumb {
+    background-image: url('images/CellMan.jpg');
+    grid-column: 2 / 4;
+    grid-row: 2;
+
+}
+
+.folded {
+    position: relative;
+    display: inline-flex;
+    transform-style: preserve-3d;
+}
+
+.folded img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 56vh;
+    opacity: 0;
+}
+
+.folded .a,
+.folded .b {
+    top: 0;
+    display: inline-block;
+    height: 100%;
+    background-image: var(--bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.folded .a {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    background-position: 0 0;
+}
+
+.folded .bc {
+    position: absolute;
+    display: inline-flex;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    transform-origin: left;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+}
+
+.folded .b {
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.folded .b {}
+
+.folded .b:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight);
+    transform: rotateY(180deg) translateZ(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.folded:hover .bc,
+.folded:active .bc {
+    transform: rotateY(-180deg) translateZ(-1px);
+    transition: transform 2s;
+}
+
+.work-thumb {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+a:has(.work-1-thumb),
+a:has(.work-2-thumb),
+a:has(.work-3-thumb),
+a:has(.work-4-thumb) {
+    margin: 0 auto;
+}
+
+a:has(.work-1-thumb),
+a:has(.work-2-thumb) {
+    order: 1;
+}
+
+a:has(.work-3-thumb),
+a:has(.work-4-thumb) {
+    order: 3
+}
+
+.work h2 {
+    position: absolute;
+    top: calc(50% - 1em);
+    left: 50%;
+    transform: translate(-50%, -49%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 0.9vw, 2rem);
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.project-desc-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-desc {
+    margin: 1em 3em
+}
+
+
+/*.works-container::after,
+.landing-container::after {
+    content: "";
+    background-image: url("images/grain2.jpg");
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0.4;
+    /*animation: animateGrain 8s steps(10) infinite;*/
+
+
+@keyframes animateGrain {
+
+    0%,
+    100% {
+        transform: translate(0, 0)
+    }
+
+    10% {
+        transform: translate(-5%, -10%)
+    }
+
+    20% {
+        transform: translate(-15%, -20%)
+    }
+
+    30% {
+        transform: translate(-5%, -10%)
+    }
+
+    40% {
+        transform: translate(-15%, -20%)
+    }
+
+    50% {
+        transform: translate(-5%, -10%)
+    }
+
+    60% {
+        transform: translate(-15%, -20%)
+    }
+
+    70% {
+        transform: translate(-5%, -10%)
+    }
+
+    80% {
+        transform: translate(-15%, -20%)
+    }
+
+    90% {
+        transform: translate(-5%, -10%)
+    }
+
+    100% {
+        transform: translate(-15%, -20%)
+    }
+
+}
+
+/* test fold */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*grid-template-rows: repeat(2, 1fr);
+    height: 100vh;*/
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+    background: var(--highlight);
+
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.image-half {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.image-left {
+    left: 0;
+    overflow: hidden;
+
+}
+
+.image-right {
+    right: 0;
+    transform-origin: left center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+}
+
+
+.fold-right .image-left {
+    left: 0;
+    transform-origin: right center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    z-index: 9999999999;
+    position: absolute;
+}
+
+.fold-right .image-right {
+    right: 0;
+    overflow: hidden;
+}
+
+.image-right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight);
+    transform: rotateY(180deg) translateZ(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.fold-right .image-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight);
+    transform: rotateY(180deg) translateZ(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    z-index: 9999999999;
+}
+
+.grid-item:hover .fold-left .image-right {
+    transform: rotateY(-180deg);
+}
+
+.grid-item:hover .fold-right .image-left {
+    transform: rotateY(180deg);
+}
+
+
+.image {
+    position: absolute;
+    height: 100%;
+    width: 200%;
+    object-fit: cover;
+}
+
+.image-left .image {
+    left: 0;
+}
+
+.image-right .image {
+    right: 0;
+}
+
+.work-grid h2 {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    text-align: center;
+}
+
+.work-grid .fold-right+h2 {
+    transform: translate(-50%, -50%);
+    left: 25%;
+
+}
+
+/*.firewall-grid-item {
+    background: #d80c12;
+}
+
+.whatitslike-grid-item {
+    background: #fa346c
+}
+
+.unfolding-grid-item {
+    background: #ff1352
+}
+
+.passages-grid-item {
+    background: var(--orange)
+}*/
+
+.work-hidden {
+    z-index: -1;
+}
+
+@media (max-width: calc(600px + 10em)) {
+
+    .works-wrapper,
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    a:has(.work) {
+        grid-column: 1 / 3;
+    }
+
+
+    .project-page menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .video-16-9 {
+        width: 90%;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2x2 Page-Turn Image Grid with Colored Back</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .image-half {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-left {
+            left: 0;
+        }
+
+        .image-right {
+            right: 0;
+            transform-origin: left center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .image-right::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            /* Change this color as desired */
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+        }
+
+        .grid-item:hover .image-right {
+            transform: rotateY(-180deg);
+        }
+
+        .image {
+            position: absolute;
+            height: 100%;
+            width: 200%;
+            object-fit: cover;
+        }
+
+        .image-left .image {
+            left: 0;
+        }
+
+        .image-right .image {
+            right: 0;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="grid-item">
+            <div class="image-wrapper">
+                <div class="image-half image-left">
+                    <img src="images/FIREWALL_NYC-06.jpg" alt="Random image 1" class="image">
+                </div>
+                <div class="image-half image-right">
+                    <img src="images/FIREWALL_NYC-06.jpg" alt="Random image 1" class="image">
+                </div>
+            </div>
+            <div class="text">Hidden Text 1</div>
+        </div>
+        <div class="grid-item">
+            <div class="image-wrapper">
+                <div class="image-half image-left">
+                    <img src="images/FIREWALL_NYC-06.jpg" alt="Random image 2" class="image">
+                </div>
+                <div class="image-half image-right">
+                    <img src="images/FIREWALL_NYC-06.jpg" alt="Random image 2" class="image">
+                </div>
+            </div>
+            <div class="text">Hidden Text 2</div>
+        </div>
+        <div class="grid-item">
+            <div class="image-wrapper">
+                <div class="image-half image-left">
+                    <img src="https://source.unsplash.com/random/800x800?3" alt="Random image 3" class="image">
+                </div>
+                <div class="image-half image-right">
+                    <img src="https://source.unsplash.com/random/800x800?3" alt="Random image 3" class="image">
+                </div>
+            </div>
+            <div class="text">Hidden Text 3</div>
+        </div>
+        <div class="grid-item">
+            <div class="image-wrapper">
+                <div class="image-half image-left">
+                    <img src="https://source.unsplash.com/random/800x800?4" alt="Random image 4" class="image">
+                </div>
+                <div class="image-half image-right">
+                    <img src="https://source.unsplash.com/random/800x800?4" alt="Random image 4" class="image">
+                </div>
+            </div>
+            <div class="text">Hidden Text 4</div>
+        </div>
+    </div>
+</body>
+
+</html>
