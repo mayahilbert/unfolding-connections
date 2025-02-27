@@ -655,6 +655,10 @@ a:has(.work-4-thumb) {
 
 }
 
+.fold-right {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 .fold-right .image-left {
     left: 0;
