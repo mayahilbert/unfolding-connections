@@ -52,7 +52,7 @@ html {
 body {
 
     font-family: 'Satoshi-Variable', sans-serif;
-    background: black;
+    background: var(--white);
     color: var(--black);
     width: 100%;
     margin: 0;
@@ -64,6 +64,14 @@ body {
 body em {
     font-family: 'Satoshi-VariableItalic', sans-serif;
 
+}
+
+.maxwidth {
+    max-width: 100%;
+}
+
+figcaption {
+    text-align: right;
 }
 
 #myVideo {
@@ -145,6 +153,7 @@ nav {
     flex-direction: column;
 }
 
+
 @media (max-width: 1280px) {
 
     nav a:nth-child(3) {
@@ -162,14 +171,30 @@ nav {
     }
 }
 
-nav a {
-    display: block;
-    font-weight: 900;
-    color: black;
+.project-page nav {
+    max-width: 100%;
+    background-color: var(--highlight);
+    margin-bottom: 3rem;
+
 
 }
 
-.link-nma::after {
+.project-page nav a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav a,
+nav a>p {
+    display: block;
+    font-weight: 900;
+    color: black;
+    font-size: clamp(0.6875rem, 0.5397rem + 0.5564vw, 1.875rem);
+}
+
+.link-nma::after,
+.link-artist::after {
     content: "\2197";
     padding: 1em;
 }
@@ -182,6 +207,33 @@ nav a {
 .link-view::after {
     content: "\2198";
     padding: 1em;
+}
+
+.link-back::before {
+    content: "\2196";
+    padding: 1em;
+
+}
+
+.link-artist {
+    background-color: var(--highlight);
+    color: var(--black);
+    padding: 0.5em;
+}
+
+.link-firewall {
+    color: #d72b29;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.4rem;
+
+    background-image: url("images/firewall-logo.png");
+    width: 100%;
+    text-align: center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 200px;
 }
 
 .exhibition-title-container {
@@ -303,8 +355,8 @@ a {
 }
 
 p {
-    font-size: clamp(1rem, 1.2vw, 2rem);
-    font-weight: 300;
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-weight: 400;
     max-width: 36em;
 }
 
@@ -336,30 +388,19 @@ a {
     display: flex;
     justify-content: center;
     cursor: pointer;
+    max-height: 70vh;
+    width: 100%;
 }
 
-.video-16-9 {
-    aspect-ratio: 16/9;
-    width: 70%;
+.video-4-3 {
+    aspect-ratio: 4/3;
+    width: 80%;
     position: relative;
     z-index: 50;
 }
 
 h1 {
     font-size: clamp(2rem, 2.4vw, 4rem);
-}
-
-.project-page .exhibition-title {
-    font-size: 1.4rem;
-}
-
-.project-page menu {
-    gap: 1em;
-}
-
-.project-page menu .button-link {
-
-    padding: 0.2em 0.7em;
 }
 
 .works-container {
@@ -371,7 +412,13 @@ h1 {
 
 .project-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2em;
+    margin: 2em
+}
+
+.passages-container {
+    flex-direction: row-reverse;
 }
 
 .works-wrapper {
@@ -524,22 +571,6 @@ a:has(.work-4-thumb) {
     order: 3
 }
 
-.work h2 {
-    position: absolute;
-    top: calc(50% - 1em);
-    left: 50%;
-    transform: translate(-50%, -49%);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: clamp(1rem, 0.9vw, 2rem);
-    width: 100%;
-    text-align: center;
-    display: none;
-}
-
 .project-desc-container {
     display: flex;
     align-items: center;
@@ -547,9 +578,9 @@ a:has(.work-4-thumb) {
 }
 
 .project-desc {
-    margin: 1em 3em
-}
+    padding-right: 3em;
 
+}
 
 /*.works-container::after,
 .landing-container::after {
@@ -617,14 +648,19 @@ a:has(.work-4-thumb) {
     grid-template-columns: repeat(2, 1fr);
     /*grid-template-rows: repeat(2, 1fr);
     height: 100vh;*/
+    /*overflow: hidden;*/
+
 }
 
 .grid-item {
     position: relative;
-    overflow: hidden;
     perspective: 1000px;
-    background: var(--highlight);
+    overflow: hidden;
 
+    background: var(--highlight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-wrapper {
@@ -640,16 +676,16 @@ a:has(.work-4-thumb) {
     height: 100%;
 }
 
-.image-left {
+.fold-left .image-left {
     left: 0;
     overflow: hidden;
 
 }
 
-.image-right {
+.fold-left .image-right {
     right: 0;
     transform-origin: left center;
-    transition: transform 0.6s;
+    transition: transform 2s;
     transform-style: preserve-3d;
     backface-visibility: hidden;
 
@@ -663,7 +699,7 @@ a:has(.work-4-thumb) {
 .fold-right .image-left {
     left: 0;
     transform-origin: right center;
-    transition: transform 0.6s;
+    transition: transform 2s;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     z-index: 9999999999;
@@ -675,7 +711,7 @@ a:has(.work-4-thumb) {
     overflow: hidden;
 }
 
-.image-right::after {
+.fold-left .image-right::after {
     content: "";
     position: absolute;
     top: 0;
@@ -683,9 +719,11 @@ a:has(.work-4-thumb) {
     width: 100%;
     height: 100%;
     background-color: var(--highlight);
-    transform: rotateY(180deg) translateZ(1px);
+    transform: rotateY(180deg) translateZ(2px);
     transform-style: preserve-3d;
     backface-visibility: hidden;
+    perspective: 1000px;
+
 }
 
 .fold-right .image-left::after {
@@ -696,20 +734,58 @@ a:has(.work-4-thumb) {
     width: 100%;
     height: 100%;
     background-color: var(--highlight);
-    transform: rotateY(180deg) translateZ(1px);
+    transform: rotateY(180deg) translateZ(2px);
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    z-index: 9999999999;
+    perspective: 1000px;
+
+}
+
+.shadow {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform: translateZ(2px);
+    opacity: 0;
+    transition: 2s;
+}
+
+.grid-item:hover .shadow {
+    opacity: 1;
 }
 
 .grid-item:hover .fold-left .image-right {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg) translateZ(2px);
 }
 
 .grid-item:hover .fold-right .image-left {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(2px);
 }
 
+.image-flicker {
+    width: 0;
+    height: 0;
+    z-index: 999999;
+    top: 0;
+    left: calc(50% - 3px);
+    position: relative;
+}
+
+
+.image-wrapper:hover .image-flicker {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: var(--highlight);
+    transition: width 0s ease-in-out 0.6s;
+
+}
 
 .image {
     position: absolute;
@@ -731,9 +807,16 @@ a:has(.work-4-thumb) {
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: clamp(0.875rem, 0.2839rem + 2.2255vw, 5.625rem);
     text-align: center;
+    color: var(--black);
 }
+
+.work-hidden {
+    z-index: -1;
+}
+
+
 
 .work-grid .fold-right+h2 {
     transform: translate(-50%, -50%);
@@ -757,11 +840,12 @@ a:has(.work-4-thumb) {
     background: var(--orange)
 }*/
 
-.work-hidden {
-    z-index: -1;
-}
 
-@media (max-width: calc(600px + 10em)) {
+
+@media (max-width: calc(600px + 10rem)) {
+    .project-container {
+        flex-direction: column;
+    }
 
     .works-wrapper,
     .work-grid {
@@ -773,10 +857,28 @@ a:has(.work-4-thumb) {
     }
 
 
-    .project-page menu {
+    .project-page nav a {
         flex-direction: column;
         text-align: center;
     }
+
+    /*.work-grid h2.work-hidden {
+        z-index: 1;
+    }*/
+    /*
+    .fold-right .image-left {
+        background: var(--highlight);
+
+    }*/
+
+    /*
+    .work-grid h2,
+    .work-grid .fold-right+h2 {
+        left: auto;
+        top: auto;
+        transform: none;
+        font-size: 2em;
+back    }*/
 
 }
 
@@ -784,4 +886,53 @@ a:has(.work-4-thumb) {
     .video-16-9 {
         width: 90%;
     }
+}
+
+.image-right {
+    background: url("images/FIREWALL_NYC-06.jpg");
+}
+
+.photos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+
+
+.passages-photos-container {
+    margin-top: 10%;
+    gap: 8rem;
+
+}
+
+.photos-container img {
+    max-height: 110vh;
+    max-width: 100%;
+}
+
+@media (min-width: calc(10rem + 600px)) {
+    .landscape-photo {
+        margin-right: -45vw;
+        max-width: 90vw;
+    }
+
+    .nudge-left-30 {
+        margin-left: 30vw
+    }
+
+    .nudge-left-50 {
+        margin-left: 50vw
+    }
+
+    .nudge-left-60 {
+        margin-left: 60vw
+    }
+}
+
+.firewall-logo {
+    width: 50%;
 }
