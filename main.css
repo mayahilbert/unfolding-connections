@@ -228,9 +228,9 @@ nav a>p {
     font-size: 1.4rem;
 
     background-image: url("images/firewall-logo.png");
-    width: 100%;
+    max-width: 100%;
     text-align: center;
-    background-size: 400px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
     padding-top: 200px;
