@@ -197,6 +197,17 @@ nav a>p {
     font-size: clamp(0.6875rem, 0.5397rem + 0.5564vw, 1.875rem);
 }
 
+.top-link {
+    color: black;
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
 .link-nma::after,
 .link-artist::after {
     content: "\2197";
@@ -956,6 +967,7 @@ back    }*/
 .passages-photos-container {
     margin-top: 10%;
     gap: 8rem;
+    padding-bottom: 5%;
 
 }
 
