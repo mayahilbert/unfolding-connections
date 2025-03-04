@@ -611,10 +611,7 @@ a:has(.work-4-thumb) {
     flex-direction: column;
 }
 
-.project-desc {
-    padding-right: 3em;
 
-}
 
 /*.works-container::after,
 .landing-container::after {
@@ -992,6 +989,11 @@ back    }*/
 
     .nudge-left-60 {
         margin-left: 60vw
+    }
+
+    .project-desc {
+        padding-right: 3em;
+
     }
 }
 
