@@ -175,8 +175,12 @@ nav {
     max-width: 100%;
     background-color: var(--highlight);
     margin-bottom: 3rem;
+    padding: 0;
+    transition: 0.5s;
+}
 
-
+.project-page nav:hover {
+    padding: 1em;
 }
 
 .project-page nav a {
@@ -221,12 +225,17 @@ nav a>p {
     padding: 0.5em;
 }
 
+.link-firewall::after {
+    content: "\2197";
+    padding: 1em 0 1em 1em;
+}
+
 .link-firewall {
     color: #d72b29;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.4rem;
-
+    letter-spacing: 0.1em;
     background-image: url("images/firewall-logo.png");
     max-width: 100%;
     text-align: center;
@@ -296,9 +305,17 @@ nav a>p {
     }
 }
 
+#exhibition-title {
+    transition: 1s;
+}
+
 .exhibition-title-1 {
-    rotate: 90deg;
+    /*rotate: 90deg;*/
     position: absolute;
+    writing-mode: vertical-lr;
+    margin-top: -2.03em;
+    margin-left: 2.07em;
+    height: 5.24em;
 }
 
 .exhibition-title-2 {
@@ -314,10 +331,15 @@ nav a>p {
 }
 
 .exhibition-title-4 {
-    margin-top: 0.52em;
+    /*margin-top: 0.52em;
     margin-left: 7.9em;
-    rotate: 270deg;
+    rotate: 270deg;*/
     position: absolute;
+    margin-top: -1.43em;
+    margin-left: 9.9em;
+    rotate: -180deg;
+    writing-mode: vertical-rl;
+    height: 5.24em;
 }
 
 .exhibition-title-5 {
@@ -325,6 +347,7 @@ nav a>p {
     margin-left: 5.69em;
     rotate: 180deg;
     position: absolute;
+    width: 4.4em;
 }
 
 #main-wrapper {
@@ -673,7 +696,7 @@ a:has(.work-4-thumb) {
 .image-half {
     position: absolute;
     width: 50%;
-    height: 100%;
+    height: 100.5%;
 }
 
 .fold-left .image-left {
@@ -860,6 +883,33 @@ a:has(.work-4-thumb) {
     .project-page nav a {
         flex-direction: column;
         text-align: center;
+    }
+
+    .fold-left .image-right,
+    .fold-right .image-left,
+    .image-flicker {
+        display: none;
+    }
+
+    .fold-left .image-left .image,
+    .fold-right .image-right .image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-half {
+        width: 60%;
+    }
+
+    .work-grid .fold-right+h2 {
+        left: 19%;
+        max-width: 20%;
+
+    }
+
+    .work-grid .fold-left+h2 {
+        left: 80%;
+        max-width: 20%;
     }
 
     /*.work-grid h2.work-hidden {
