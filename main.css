@@ -426,6 +426,13 @@ a {
     width: 100%;
 }
 
+.video-16-9 {
+    aspect-ratio: 16/9;
+    width: 80%;
+    position: relative;
+    z-index: 50;
+}
+
 .video-4-3 {
     aspect-ratio: 4/3;
     width: 80%;
