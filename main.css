@@ -989,6 +989,19 @@ back    }*/
 
 }
 
+.nai-photos-container {
+    margin-top: 3%;
+    gap: 4rem;
+    padding-bottom: 4rem;
+
+}
+
+.nai-photos-container .photo-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
 .photos-container img {
     max-height: 110vh;
     max-width: 100%;
@@ -1016,6 +1029,12 @@ back    }*/
         padding-right: 3em;
 
     }
+
+    .nai-photos-container .photo-row {
+        flex-direction: row;
+        gap: 2em;
+    }
+
 }
 
 .firewall-logo {
