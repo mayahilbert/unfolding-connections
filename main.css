@@ -441,7 +441,7 @@ a {
 
 .video-16-9 {
     aspect-ratio: 16/9;
-    width: 80%;
+    width: 85%;
     position: relative;
     z-index: 50;
 }
@@ -963,7 +963,7 @@ back    }*/
 
 @media (max-width: 940px) {
     .video-16-9 {
-        width: 90%;
+        width: 100%;
     }
 }
 
