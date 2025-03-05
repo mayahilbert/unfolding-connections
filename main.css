@@ -66,6 +66,12 @@ body em {
 
 }
 
+.project-page {
+    background: var(--black);
+    color: var(--white);
+}
+
+
 .maxwidth {
     max-width: 100%;
 }
@@ -198,7 +204,6 @@ nav a>p {
 }
 
 .top-link {
-    color: black;
     position: absolute;
     bottom: 1em;
     left: 0;
@@ -206,6 +211,10 @@ nav a>p {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.link-title {
+    padding: 0 1em;
 }
 
 .link-nma::after,
@@ -253,7 +262,8 @@ nav a>p {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
-    padding-top: 200px;
+    padding: 200px 1em 1em 1em;
+    background-color: var(--white);
 }
 
 .exhibition-title-container {
@@ -902,6 +912,15 @@ a:has(.work-4-thumb) {
     .works-wrapper,
     .work-grid {
         grid-template-columns: 1fr;
+        background-color: var(--black);
+    }
+
+    .grid-item {
+        background-color: var(--black);
+    }
+
+    .work-grid h2 {
+        color: var(--highlight)
     }
 
     a:has(.work) {
@@ -1007,10 +1026,15 @@ back    }*/
     max-width: 100%;
 }
 
+
 @media (min-width: calc(10rem + 600px)) {
     .landscape-photo {
         margin-right: -45vw;
         max-width: 90vw;
+    }
+
+    .nudge-right-30 {
+        margin-left: -40vw
     }
 
     .nudge-left-30 {
@@ -1018,7 +1042,7 @@ back    }*/
     }
 
     .nudge-left-50 {
-        margin-left: 50vw
+        margin-left: 45vw
     }
 
     .nudge-left-60 {
@@ -1039,4 +1063,23 @@ back    }*/
 
 .firewall-logo {
     width: 50%;
+}
+
+.work-grid-dark .grid-item {
+    background: black;
+}
+
+.work-grid-dark .grid-item h2 {
+    color: var(--highlight);
+
+}
+
+.work-grid-dark .fold-left .image-right::after,
+.work-grid-dark .fold-right .image-left::after {
+    background-color: var(--black);
+}
+
+.work-grid-dark .image-wrapper:hover .image-flicker {
+
+    background-color: var(--black);
 }
