@@ -399,7 +399,7 @@ a {
 }
 
 p {
-    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-size: clamp(1rem, 1.75vw, 2rem);
     font-weight: 400;
     max-width: 36em;
 }
@@ -1082,4 +1082,13 @@ back    }*/
 .work-grid-dark .image-wrapper:hover .image-flicker {
 
     background-color: var(--black);
+}
+
+.metadata p {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.project-desc h1 {
+    margin: 0;
 }
