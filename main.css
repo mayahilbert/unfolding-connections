@@ -52,7 +52,7 @@ html {
 body {
 
     font-family: 'Satoshi-Variable', sans-serif;
-    background: var(--white);
+    background: var(--black);
     color: var(--black);
     width: 100%;
     margin: 0;
