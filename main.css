@@ -398,7 +398,8 @@ a {
     text-decoration: none;
 }
 
-p {
+p,
+blockquote {
     font-size: clamp(1rem, 1.75vw, 2rem);
     font-weight: 400;
     max-width: 36em;
